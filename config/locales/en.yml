@@ -1,11 +1,28 @@
 en:
   users:
+    new:
+      title: "Sign up"
+      button: "Create my account"
     create:
       welcome: "Welcome to the Pblog!"
-
+    update:
+      susscess: "Update Profile"
+    edit:
+      title: "Update your profile"
+      submit: "Save Changes"
     find_user:
       not_found: "User not found."
 
   session:
     create:
       email_invalid: "Invalid email/password combination"
+
+  layouts:
+    header:
+      logo: "Plog"
+      users: "Users"
+      account: "Account"
+      logout: "Log out"
+      si_su: "Signin/Signup"
+      profile: "Profile"
+      settings: "Settings"

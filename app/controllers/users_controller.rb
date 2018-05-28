@@ -8,7 +8,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "Welcome to the Sample App!"
+      log_in @user
+      flash[:success] = t ".welcome"
       redirect_to @user
     else
       render :new
@@ -20,7 +21,7 @@ class UsersController < ApplicationController
   def find_user
     @user = User.find_by id: params[:id]
     return if @user
-    flash.now[:danger] = "User not found."
+    flash.now[:danger] = t ".notfound"
   end
 
   private

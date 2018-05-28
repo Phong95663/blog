@@ -10,3 +10,6 @@ user:
 
 user_helper:
   size: 80
+
+session:
+  remember: "1"

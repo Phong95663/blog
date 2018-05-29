@@ -4,7 +4,7 @@ en:
       title: "Sign up"
       button: "Create my account"
     create:
-      welcome: "Welcome to the Pblog!"
+      info: "Please check your email to activate your account."
     update:
       susscess: "Update Profile"
     edit:
@@ -16,6 +16,7 @@ en:
   session:
     create:
       email_invalid: "Invalid email/password combination"
+      message: "Account not activated. Check your email for the activation link."
 
   layouts:
     header:
@@ -26,3 +27,14 @@ en:
       si_su: "Signin/Signup"
       profile: "Profile"
       settings: "Settings"
+
+  user_mailer:
+    subject: "Account activation"
+    account_activation:
+      hi: "Hi"
+      welcome: "Welcome to the Sample App! Click on the link below to activate your account:"
+
+  account_activations:
+    edit:
+      susscess: "Account activated!"
+      danger: "Invalid activation link"

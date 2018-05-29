@@ -15,6 +15,7 @@ gem "bootstrap-sass"
 gem "bcrypt"
 gem "config"
 gem "jquery-rails"
+gem "faker"
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "sqlite3"

@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       params[:session][:remember_me] == Settings.session.remember ? remember(user) : forget(user)
       redirect_to user
     else
-      flash[:danger] =
+      flash[:danger] = t ".email_invalid"
       render :new
     end
   end

@@ -16,6 +16,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit; end
+
+  def update
+    if @user.update_attributes user_params
+      flash[:success] = t ".susscess"
+      redirect_to @user
+    else
+      render :edit
+    end
+  end
+
   def show; end
 
   def find_user

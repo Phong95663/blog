@@ -16,6 +16,11 @@ gem "bcrypt"
 gem "config"
 gem "jquery-rails"
 gem "faker"
+gem "kaminari"
+gem "bootstrap-kaminari-views"
+gem "pygments.rb", "~> 0.6.3"
+gem "redcarpet", "~> 3.3", ">= 3.3.4"
+gem "simplemde-rails"
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "sqlite3"

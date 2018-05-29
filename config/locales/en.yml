@@ -27,6 +27,7 @@ en:
       si_su: "Signin/Signup"
       profile: "Profile"
       settings: "Settings"
+      post: "Create Post"
 
   user_mailer:
     subject: "Account activation"
@@ -38,3 +39,11 @@ en:
     edit:
       susscess: "Account activated!"
       danger: "Invalid activation link"
+
+  application:
+    logged_in_user:
+      danger: "Please log in."
+
+  post:
+    create:
+      susscess: "Post created!"

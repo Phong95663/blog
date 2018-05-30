@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :find_user, except: [:new]
+  before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
 
   def new
     @user = User.new
@@ -27,7 +28,11 @@ class UsersController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @posts = @user.posts.order_by_created_at
+                                  .page(params[:page])
+                                  .per Settings.post.per_page
+  end
 
   def find_user
     @user = User.find_by id: params[:id]

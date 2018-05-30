@@ -11,7 +11,10 @@ class PostsController < ApplicationController
     @posts = Post.load_data_post.page(params[:page]).per Settings.post.per_page
   end
 
-  def show; end
+  def show
+    @comments = @post.comments.all
+    @comment = @post.comments.build
+  end
 
   def edit; end
 

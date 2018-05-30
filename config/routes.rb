@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       end
   end
   resources :posts
+  resources :comments
   resources :account_activations, only: [:edit]
   resources :relationships, only: [:create, :destroy]
 end

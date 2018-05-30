@@ -1,0 +1,25 @@
+<div id="comment-form">
+  <h3>Comments (<%= @post.comments.count%>)</h3>
+  <% @comments.each do |comment| %>
+      <li>
+        <%= link_to gravatar_for(comment.user, size: 50), comment.user%>
+        <span>
+          <span class="user"><%= link_to comment.user.name, comment.user %></span>
+          <span class="timestamp">
+            <%= time_ago_in_words(comment.created_at)%> ago.
+          </span>
+          <span>
+            <% if current_user == comment.user %>
+              <%= link_to "Edit", edit_comment_path(comment),
+                remote: true %> /
+              <%= link_to "Delete", comment_path(comment), method: :delete,
+                remote: true, data: {confirm: "You sure?"} %></p>
+            <% end %>
+          </span>
+        </span>
+        <span class="content"><p><%= comment.content %>
+        <hr/>
+      </li>
+  <% end %>
+  <%= render "comments/form" %>
+</div>

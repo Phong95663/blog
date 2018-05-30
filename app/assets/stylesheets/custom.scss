@@ -259,3 +259,10 @@ span.picture {
 .users.follow {
   padding: 0;
 }
+
+#comment-form {
+  list-style: none;
+  .timestamp {
+    color: $gray-light;
+  }
+}

@@ -1,0 +1,13 @@
+  <span id="form_comment">
+    <%= form_for(@comment, remote: true) do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+        <div class="field">
+          <%= f.hidden_field :post_id, value: @post.id %>
+          <%= f.hidden_field :user_id,
+            value: current_user.id if current_user != nil %>
+          <%= f.text_area :content, value: @comment.content,
+            class: "form-control" %>
+        </div>
+      <%= f.submit "Edit comment", class: "btn btn-primary" %>
+    <% end %>
+  </span>

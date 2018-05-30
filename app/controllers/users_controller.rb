@@ -1,9 +1,13 @@
 class UsersController < ApplicationController
-  before_action :find_user, except: [:new]
+  before_action :find_user, except: [:new, :index]
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
 
   def new
     @user = User.new
+  end
+
+  def index
+    @users = User.load_data.page(params[:page]).per Settings.user.per_page
   end
 
   def create

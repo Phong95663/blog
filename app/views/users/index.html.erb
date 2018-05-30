@@ -1,0 +1,11 @@
+<h1><%= t ".title" %></h1>
+
+<ul class="users">
+  <% @users.each do |user| %>
+    <li>
+      <%= gravatar_for user, size: 50 %>
+      <%= link_to user.name, user %>
+    </li>
+  <% end %>
+</ul>
+<%= paginate @users, theme: 'twitter-bootstrap-3' %>

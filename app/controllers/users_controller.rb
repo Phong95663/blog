@@ -44,6 +44,18 @@ class UsersController < ApplicationController
     flash.now[:danger] = t ".notfound"
   end
 
+  def following
+    @title = "Following"
+    @users = @user.following.page params[:page]
+    render :show_follow
+  end
+
+  def followers
+    @title = "Followers"
+    @users = @user.followers.page params[:page]
+    render :show_follow
+  end
+
   private
 
   def user_params

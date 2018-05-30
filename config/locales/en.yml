@@ -10,6 +10,8 @@ en:
     edit:
       title: "Update your profile"
       submit: "Save Changes"
+    index:
+      title: "All users"
     find_user:
       not_found: "User not found."
 
@@ -17,6 +19,11 @@ en:
     create:
       email_invalid: "Invalid email/password combination"
       message: "Account not activated. Check your email for the activation link."
+
+    new:
+      login: "Log in"
+      new_user: "New user?"
+      signup_now: "Sign up now!"
 
   layouts:
     header:
@@ -28,6 +35,10 @@ en:
       profile: "Profile"
       settings: "Settings"
       post: "Create Post"
+
+    footer:
+      blog: "Blog by "
+      author: "Vu Phong"
 
   user_mailer:
     subject: "Account activation"
@@ -44,6 +55,20 @@ en:
     logged_in_user:
       danger: "Please log in."
 
-  post:
+  posts:
     create:
       susscess: "Post created!"
+
+    update:
+      susscess: "Updated"
+
+    destroy:
+      susscess: "Post deleted"
+
+    find_post:
+      danger: "Post not found"
+
+  shared:
+    error_messages:
+      err: "error"
+      contain: "The form contains"

@@ -12,7 +12,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update_attributes post_params
-      flash[:success] = "Updated"
+      flash[:success] = t ".susscess"
       redirect_to @post
     else
       render :edit
@@ -22,7 +22,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      flash[:success] = "post created!"
+      flash[:success] = t ".susscess"
       redirect_to @post
     else
       render "static_pages/home"
@@ -31,14 +31,14 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    flash[:success] = "Post deleted"
+    flash[:success] = t ".susscess"
     redirect_to current_user
   end
 
   def find_post
     @post = Post.find_by id: params[:id]
     return if @post
-    flash.now[:danger] = "notfound"
+    flash.now[:danger] = t ".danger"
   end
 
   private

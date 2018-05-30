@@ -2,8 +2,13 @@ class PostsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
   before_action :find_post, only: [:show]
   before_action :correct_user, only: [:edit, :destroy, :update]
+
   def new
     @post = current_user.posts.build
+  end
+
+  def index
+    @posts = Post.load_data_post.page(params[:page]).per Settings.post.per_page
   end
 
   def show; end

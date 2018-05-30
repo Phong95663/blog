@@ -20,6 +20,7 @@ en:
       email_invalid: "Invalid email/password combination"
       message: "Account not activated. Check your email for the activation link."
 
+  sessions:
     new:
       login: "Log in"
       new_user: "New user?"

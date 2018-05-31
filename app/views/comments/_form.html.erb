@@ -5,9 +5,9 @@
           <%= f.hidden_field :post_id, value: @post.id %>
           <%= f.hidden_field :user_id,
             value: current_user.id if current_user != nil %>
-          <%= f.text_area :content, placeholder: "Compose new comment...",
+          <%= f.text_area :content, placeholder: t(".placeholder"),
             class: "form-control" %>
         </div>
-      <%= f.submit "Comment", class: "btn btn-primary" %>
+      <%= f.submit t(".comment"), class: "btn btn-primary" %>
     <% end %>
   </span>

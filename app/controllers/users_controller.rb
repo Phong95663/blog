@@ -45,13 +45,13 @@ class UsersController < ApplicationController
   end
 
   def following
-    @title = "Following"
+    @title = t ".following"
     @users = @user.following.page params[:page]
     render :show_follow
   end
 
   def followers
-    @title = "Followers"
+    @title = t ".followers"
     @users = @user.followers.page params[:page]
     render :show_follow
   end

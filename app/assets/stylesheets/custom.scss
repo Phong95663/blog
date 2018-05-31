@@ -19,11 +19,11 @@ h1 {
 }
 
 h2 {
+  color: #777;
   font-size: 1.2em;
+  font-weight: normal;
   letter-spacing: -1px;
   margin-bottom: 30px;
-  font-weight: normal;
-  color: #777;
 }
 
 p {
@@ -34,14 +34,14 @@ p {
 /* header */
 
 #logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
   color: #fff;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
+  float: left;
+  font-size: 1.7em;
   font-weight: bold;
+  letter-spacing: -1px;
+  margin-right: 10px;
+  padding-top: 9px;
+  text-transform: uppercase;
 }
 
 #logo:hover {
@@ -71,10 +71,10 @@ textarea {
 /* footer */
 
 footer {
-  margin-top: 45px;
-  padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: #777;
+  margin-top: 45px;
+  padding-top: 5px;
 }
 
 footer a {
@@ -100,20 +100,20 @@ footer ul li {
 }
 
 .debug_dump {
+  @include box_sizing;
   clear: both;
   float: left;
-  width: 100%;
   margin-top: 45px;
-  @include box_sizing;
+  width: 100%;
 }
 
 /* forms */
 
 input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  margin-bottom: 15px;
   @include box_sizing;
+  border: 1px solid #bbb;
+  margin-bottom: 15px;
+  width: 100%;
 }
 
 input {
@@ -136,17 +136,17 @@ input {
 }
 
 .checkbox {
-  margin-top: -10px;
   margin-bottom: 10px;
+  margin-top: -10px;
   span {
-    margin-left: 20px;
     font-weight: normal;
+    margin-left: 20px;
   }
 }
 
 #session_remember_me {
-  width: auto;
   margin-left: 0;
+  width: auto;
 }
 
 /* posts */
@@ -155,8 +155,8 @@ input {
   list-style: none;
   padding: 0;
   li {
-    padding: 15px 0;
     border-top: 1px solid #e8e8e8;
+    padding: 15px 0;
   }
   .user {
     margin-top: 5em;
@@ -176,8 +176,17 @@ input {
     margin-left: 60px;
   }
   .title {
-    margin-left: 0px;
     font-size: 2em;
+    margin-left: 0px;
+  }
+
+  .title_my_posts {
+    font-size: 2em;
+    margin-left: 60px;
+  }
+
+  .comment {
+    margin-left: 60px;
   }
 
   .gravatar {
@@ -207,9 +216,9 @@ span.picture {
   list-style: none;
   margin: 0;
   li {
+    border-bottom: 1px solid $gray-lighter;
     overflow: auto;
     padding: 10px 0;
-    border-bottom: 1px solid $gray-lighter;
   }
 }
 
@@ -223,21 +232,21 @@ span.picture {
   margin-top: 15px;
 }
 .stats {
-  overflow: auto;
   margin-top: 0;
+  overflow: auto;
   padding: 0;
   a {
-    float: left;
-    padding: 0 10px;
     border-left: 1px solid $gray-lighter;
     color: gray;
+    float: left;
+    padding: 0 10px;
     &:first-child {
-      padding-left: 0;
       border: 0;
+      padding-left: 0;
     }
     &:hover {
-      text-decoration: none;
       color: blue;
+      text-decoration: none;
     }
   }
   strong {
@@ -246,8 +255,8 @@ span.picture {
 }
 
 .user_avatars {
-  overflow: auto;
   margin-top: 10px;
+  overflow: auto;
   .gravatar {
     margin: 1px 1px;
   }

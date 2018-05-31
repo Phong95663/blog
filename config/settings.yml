@@ -18,3 +18,9 @@ session:
 
 post:
   per_page: 10
+
+avar_comment:
+  size: 50
+
+avar_index:
+  size: 60

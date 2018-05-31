@@ -1,0 +1,20 @@
+
+    <%= link_to "#!", class: "dropdown-toggle", id: "noti-count", data: {toggle: "dropdown"},
+        aria: {haspopup: "true", expanded: "false"} do %>
+        <span class="badge badge-danger" data-noti-count="<%= logged_in? ? current_user.notifications.num_not_check : 0 %>">
+        <%= logged_in? ? current_user.notifications.num_not_check : 0 %>
+        </span>
+        <span class="caret"></span>
+    <% end %>
+    <% if logged_in? %>
+        <ul class="dropdown-menu dropdown-notification scrollable-menu" id="user-notifications">
+        <% current_user.notifications.where(checked: false).each do |notification| %>
+            <li>
+                <%= link_to "Has comment at " +
+                    (Post.find_by id: notification.notificationable_id).title + " by " +
+                    (User.find_by id: notification.notified_by_id).name,
+                    notification_path(notification),method: :patch, remote: true %>
+            </li>
+        <% end %>
+        </ul>
+    <% end %>

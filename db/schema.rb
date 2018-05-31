@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_30_133232) do
+ActiveRecord::Schema.define(version: 2018_05_31_070046) do
 
   create_table "comments", force: :cascade do |t|
     t.text "content"
@@ -22,6 +22,22 @@ ActiveRecord::Schema.define(version: 2018_05_30_133232) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "notifications", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "notified_by_id"
+    t.integer "notificationable_id"
+    t.string "notificationable_type"
+    t.string "notice_type"
+    t.boolean "read", default: false
+    t.boolean "checked", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["notificationable_id", "notificationable_type"], name: "fk_notificationables"
+    t.index ["notified_by_id"], name: "index_notifications_on_notified_by_id"
+    t.index ["read", "checked"], name: "index_notifications_on_read_and_checked"
+    t.index ["user_id"], name: "index_notifications_on_user_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.text "title"
     t.text "content"
@@ -29,7 +45,6 @@ ActiveRecord::Schema.define(version: 2018_05_30_133232) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id", "created_at"], name: "index_posts_on_user_id_and_created_at"
-    t.index ["user_id", nil, "created_at"], name: "index_posts_on_user_id_and_post_id_and_created_at"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 

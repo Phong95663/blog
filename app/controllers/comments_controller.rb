@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.create comment_params
     set_params
+    @notification = create_notification @comment if @comment.save
     respond_to do |format|
       format.html {redirect_to @comment.post}
       format.js
@@ -45,6 +46,13 @@ class CommentsController < ApplicationController
     @comments = @comment.post.comments.all
     @post = @comment.post
   end
+
+  def create_notification comment
+    return if comment.post.user_id == current_user.id
+    comment.post.notifications.create! user_id: comment.post.user_id,
+      notified_by_id: comment.user_id, notice_type: "comment"
+  end
+
   private
 
   def comment_params

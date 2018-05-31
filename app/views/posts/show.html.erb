@@ -1,7 +1,7 @@
 <div class="post-article markdown">
  <% if current_user?(@post.user) %>
-    <%= link_to "Edit", edit_post_path(@post) %> /
-    <%= link_to "delete", @post, method: :delete,
+    <%= link_to t(".edit"), edit_post_path(@post) %> /
+    <%= link_to t(".delete"), @post, method: :delete,
       data: { confirm: "You sure?" } %>
   <% end %>
   <div>

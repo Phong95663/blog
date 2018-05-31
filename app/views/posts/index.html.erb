@@ -1,16 +1,17 @@
-<h1>All posts</h1>
+<h1><%= t ".title" %></h1>
 
 <ul class="posts">
   <% @posts.each do |post| %>
     <li>
-      <%= link_to gravatar_for(post.user, size: 65), post.user%>
+      <%= link_to gravatar_for(post.user, size: Settings.avar_index.size), post.user%>
       <span>
         <span class="user"><%= link_to post.user.name, post.user %> </span>
         <span class="timestamp">
-          Posted <%= time_ago_in_words(post.created_at)%> ago.
+          <%= t ".posted" %> <%= time_ago_in_words(post.created_at)%> <%= t ".ago" %>
         </span>
       </span>
       <span class="title"><%= link_to post.title, post_path(post.id)%></span>
+      <span class="comment"><%= post.comments.count%> comment<span>
     </li>
   <% end %>
 </ul>

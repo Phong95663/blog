@@ -14,6 +14,10 @@ en:
       title: "All users"
     find_user:
       not_found: "User not found."
+    following:
+      following: "Following"
+    followers:
+      followers: "Followers"
 
   session:
     create:
@@ -25,6 +29,7 @@ en:
       login: "Log in"
       new_user: "New user?"
       signup_now: "Sign up now!"
+      remember: "Remember me on this computer"
 
   layouts:
     header:
@@ -33,8 +38,8 @@ en:
       account: "Account"
       logout: "Log out"
       si_su: "Signin/Signup"
-      profile: "Profile"
-      settings: "Settings"
+      profile: "My posts"
+      settings: "Change Profile"
       post: "Create Post"
 
     footer:
@@ -69,7 +74,42 @@ en:
     find_post:
       danger: "Post not found"
 
+    comment_form:
+      ago: "ago"
+      edit: "Edit"
+      delete: "Delete"
+      confirm: "You sure?"
+
+    post_form:
+      placeholder: "Compose new micropost..."
+
+    post:
+      posted: "Posted"
+      ago: "ago."
+
+    index:
+      title: "All posts"
+      posted: "Posted"
+      ago: "ago."
+
+    new:
+      title: "Create Post"
+
+    show:
+      edit: "Edit"
+      delete: "Delete"
+
   shared:
     error_messages:
       err: "error"
       contain: "The form contains"
+
+    stats:
+      following: "following"
+      followers: "followers"
+
+  comments:
+    edit: "Edit comment"
+    form:
+      comment: "Comment"
+      placeholder: "Write new comment..."

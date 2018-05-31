@@ -2,18 +2,18 @@
   <h3>Comments (<%= @post.comments.count%>)</h3>
   <% @comments.each do |comment| %>
       <li>
-        <%= link_to gravatar_for(comment.user, size: 50), comment.user%>
+        <%= link_to gravatar_for(comment.user, size: Settings.avar_comment.size), comment.user%>
         <span>
           <span class="user"><%= link_to comment.user.name, comment.user %></span>
           <span class="timestamp">
-            <%= time_ago_in_words(comment.created_at)%> ago.
+            <%= time_ago_in_words(comment.created_at)%> <%= t".ago" %>
           </span>
           <span>
             <% if current_user == comment.user %>
-              <%= link_to "Edit", edit_comment_path(comment),
+              <%= link_to t(".edit"), edit_comment_path(comment),
                 remote: true %> /
-              <%= link_to "Delete", comment_path(comment), method: :delete,
-                remote: true, data: {confirm: "You sure?"} %></p>
+              <%= link_to t(".delete"), comment_path(comment), method: :delete,
+                remote: true, data: {confirm: t(".confirm")}%></p>
             <% end %>
           </span>
         </span>

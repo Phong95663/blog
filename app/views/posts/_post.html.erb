@@ -1,6 +1,7 @@
 <li id="post-<%= post.id %>">
-  <span class="title"><%= link_to post.title, post_path(post.id)%></span>
+  <span class="title_my_posts"><%= link_to post.title, post_path(post.id)%></span>
   <span class="timestamp">
-    Posted <%= time_ago_in_words(post.created_at) %> ago.
+    <%= t ".posted" %> <%= time_ago_in_words(post.created_at) %> <%= t ".ago" %>
   </span>
+  <span class="comment"><%= post.comments.count%> comment<span>
 </li>
